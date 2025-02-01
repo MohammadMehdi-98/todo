@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* Make list items unselectable */
+        #list li {
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-lightMode dark:bg-darkMode flex justify-center items-center h-screen flex-col">
+    <div class="absolute top-5 left-5 cursor-pointer" id="theme">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20 text-yellow-400 animate-spin-slow">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20 text-yellow-50 animate-pulse hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+    </div>
+    <div class="bg-red-200 p-8 rounded-xl shadow-lg w-full md:w-3/4 lg:w-3/4 dark:text-white dark:bg-darkMode dark:border-x-4 mb-6">
+        <h1 class="pb-4 text-xl md:text-2xl lg:text-3xl">To Do List</h1>
+        <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9 mr-2 cursor-pointer" id="add-btn">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <input type="text" id="input" placeholder="Add a new task..." class="w-full p-3 rounded-lg outline-none dark:text-black">
+        </div>
+    </div>
+    <ul id="list">
+    </ul>
+    <footer class="bg-red-200 p-4 rounded-xl shadow-lg w-full md:w-3/4 lg:w-3/4 dark:text-white dark:bg-darkMode dark:border-x-4 mt-6 flex justify-around">
+        <button id="all-btn" class="bg-green-500 text-white p-1 rounded w-1/5 transform transition-transform duration-200 hover:scale-105 active:scale-95 dark:bg-green-700 dark:text-white text-sm md:text-base lg:text-xl">All</button>
+        <button id="active-btn" class="bg-blue-500 text-white p-1 rounded w-1/5 transform transition-transform duration-200 hover:scale-105 active:scale-95 dark:bg-blue-700 dark:text-white text-sm md:text-base lg:text-xl">Completed</button>
+        <button id="in-progress-btn" class="bg-yellow-500 text-white p-1 rounded w-1/5 transform transition-transform duration-200 hover:scale-105 active:scale-95 dark:bg-yellow-700 dark:text-white text-sm md:text-base lg:text-xl">In Progress</button>
+        <button id="delete-active-btn" class="bg-red-500 text-white p-1 rounded w-1/5 transform transition-transform duration-200 hover:scale-105 active:scale-95 dark:bg-red-700 dark:text-white text-sm md:text-base lg:text-xl">Delete Completed</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
